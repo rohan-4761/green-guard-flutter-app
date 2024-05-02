@@ -15,7 +15,7 @@ class ImageDisplayPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Image Display'),
+        title: const Text('Selected Image'),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -24,19 +24,19 @@ class ImageDisplayPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(5),
                 ),
                 child: Image.file(
                   File(imagePath),
-                  width: 200,
-                  height: 200,
+                  width: 300,
+                  height: 300,
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 25),
               const TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -61,7 +61,11 @@ class ImageDisplayPage extends StatelessWidget {
                   }
 
                 },
-                child: const Text('Talk to Chatbot'),
+                child: const Text('Talk to Chatbot',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
               ),
             ],
           ),

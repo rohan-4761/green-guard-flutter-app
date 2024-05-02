@@ -17,12 +17,14 @@ class _CamState extends State<Cam> {
   XFile? image;
 
   Future<void> _openCamera() async {
-    final pickedImage = await _imagePicker.pickImage(source: ImageSource.camera);
+    final pickedImage = await _imagePicker.pickImage(
+        source: ImageSource.camera);
     _handleImage(pickedImage);
   }
 
   Future<void> _openGallery() async {
-    final pickedImage = await _imagePicker.pickImage(source: ImageSource.gallery);
+    final pickedImage = await _imagePicker.pickImage(
+        source: ImageSource.gallery);
     _handleImage(pickedImage);
   }
 
@@ -40,83 +42,186 @@ class _CamState extends State<Cam> {
     }
   }
 
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.grey[700], // Grey color scheme
+        primaryColor: Colors.grey[500], // Grey color scheme
       ),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Green Guard'),
         ),
-        backgroundColor: Colors.grey[700],
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  _openCamera();
-                },
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-                ),
-                child: const Text(
-                  'Camera',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
+        backgroundColor: Colors.transparent,
+        // Set background color to transparent
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/botany.jpg"),
+              // Path to your background image
+              fit: BoxFit.cover, // Cover the entire container
+            ),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    _openCamera();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 12, horizontal: 24),
+                        side: const BorderSide(color: Colors.black),
+                  ),
+                  child: const Text(
+                    'Camera',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: _openGallery,
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-                ),
-                child: const Text(
-                  'Upload From Gallery',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
+                const SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: _openGallery,
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 12, horizontal: 24),
+                        side: const BorderSide(color: Colors.black),
+                  ),
+                  child: const Text(
+                    'Upload From Gallery',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () {
-                  User? user = FirebaseAuth.instance.currentUser;
-                  if (user != null) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const ChatScreen()),
-                    );
-                  } else {
-                    // If not logged in, navigate to login page
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const LoginForm()),
-                    );
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-                ),
-                child: const Text(
-                  'Chat with Bot',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
+                const SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: () {
+                    User? user = FirebaseAuth.instance.currentUser;
+                    if (user != null) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ChatScreen()),
+                      );
+                    } else {
+                      // If not logged in, navigate to login page
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginForm()),
+                      );
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 12, horizontal: 24),
+                        side: const BorderSide(color: Colors.black),
+                  ),
+                  child: const Text(
+                    'Chat with Bot',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       theme: ThemeData(
+//         primaryColor: Colors.grey[500], // Grey color scheme
+//       ),
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: const Text('Green Guard'),
+//         ),
+//         backgroundColor: Colors.grey[700],
+//         body: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               ElevatedButton(
+//                 onPressed: () {
+//                   _openCamera();
+//                 },
+//                 style: ElevatedButton.styleFrom(
+//                   padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+//                 ),
+//                 child: const Text(
+//                   'Camera',
+//                   textAlign: TextAlign.center,
+//                   style: TextStyle(
+//                     fontSize: 20,
+//                   ),
+//                 ),
+//               ),
+//               const SizedBox(height: 16),
+//               ElevatedButton(
+//                 onPressed: _openGallery,
+//                 style: ElevatedButton.styleFrom(
+//                   padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+//                 ),
+//                 child: const Text(
+//                   'Upload From Gallery',
+//                   textAlign: TextAlign.center,
+//                   style: TextStyle(
+//                     fontSize: 20,
+//                   ),
+//                 ),
+//               ),
+//               const SizedBox(height: 16),
+//               ElevatedButton(
+//                 onPressed: () {
+//                   User? user = FirebaseAuth.instance.currentUser;
+//                   if (user != null) {
+//                     Navigator.push(
+//                       context,
+//                       MaterialPageRoute(builder: (context) => const ChatScreen()),
+//                     );
+//                   } else {
+//                     // If not logged in, navigate to login page
+//                     Navigator.push(
+//                       context,
+//                       MaterialPageRoute(builder: (context) => const LoginForm()),
+//                     );
+//                   }
+//                 },
+//                 style: ElevatedButton.styleFrom(
+//                   padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+//                 ),
+//                 child: const Text(
+//                   'Chat with Bot',
+//                   textAlign: TextAlign.center,
+//                   style: TextStyle(
+//                     fontSize: 20,
+//                   ),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
