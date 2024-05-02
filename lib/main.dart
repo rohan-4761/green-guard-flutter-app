@@ -1,8 +1,5 @@
-import 'package:chatbot/pages/login_page.dart';
-import 'package:delightful_toast/delight_toast.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:chatbot/pages/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:chatbot/pages/chatScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -19,19 +16,15 @@ void main() async{
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: StreamBuilder(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return const ChatScreen();
-            } else {
-              return const LoginForm();
-            }
-          },
-        ));
+      theme: ThemeData(
+        primaryColor: Colors.red,
+      ),
+      home: const Cam(), // Use the Cam widget from cam.dart
+    );
   }
+
+
 }

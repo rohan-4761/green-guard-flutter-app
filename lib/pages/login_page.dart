@@ -22,9 +22,15 @@ class _LoginFormState extends State<LoginForm> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         elevation: 0,
-        title: const Text('GreenGuard: Predictive Plant Health'),
-
+        title: const Text(
+          'GreenGuard: Predictive Plant Health',
+          style: TextStyle(
+            fontSize: 18, // Adjust the font size as needed
+          ),
+        ),
       ),
+
+
       body: Form(
         key: _formKey,
         child: Container(
