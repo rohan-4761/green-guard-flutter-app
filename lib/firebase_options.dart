@@ -27,10 +27,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -44,41 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAmMzHtATtrOqnM2Kriwo1yocDscl_KdSc',
-    appId: '1:294125496359:web:1ac20d1312baf997bb4602',
-    messagingSenderId: '294125496359',
-    projectId: 'plant-disease-440e7',
-    authDomain: 'plant-disease-440e7.firebaseapp.com',
-    databaseURL: 'https://plant-disease-440e7-default-rtdb.firebaseio.com',
-    storageBucket: 'plant-disease-440e7.appspot.com',
+    apiKey: 'AIzaSyCU2mtTGX-YDHMaEl0XwNgcWeLm1q3CZU4',
+    appId: '1:125056695111:web:8e0f71795682993ebd6a62',
+    messagingSenderId: '125056695111',
+    projectId: 'sem6-mini-project',
+    authDomain: 'sem6-mini-project.firebaseapp.com',
+    storageBucket: 'sem6-mini-project.appspot.com',
+    measurementId: 'G-P0X2XPJFRF',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCKXf8y0s4qVHFR3ldJLaOhtzCMF545SsQ',
-    appId: '1:294125496359:android:c0ffb5539967b544bb4602',
-    messagingSenderId: '294125496359',
-    projectId: 'plant-disease-440e7',
-    databaseURL: 'https://plant-disease-440e7-default-rtdb.firebaseio.com',
-    storageBucket: 'plant-disease-440e7.appspot.com',
+    apiKey: 'AIzaSyDkJDJ60TUjNuCG_IvNmnnfShkVPYxjsU0',
+    appId: '1:125056695111:android:cbf53e0b42b9f3d6bd6a62',
+    messagingSenderId: '125056695111',
+    projectId: 'sem6-mini-project',
+    storageBucket: 'sem6-mini-project.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyATmf2S-qKjSYbpp90bRsGaGiIF5nbeZoo',
-    appId: '1:294125496359:ios:1d98271af301f040bb4602',
-    messagingSenderId: '294125496359',
-    projectId: 'plant-disease-440e7',
-    databaseURL: 'https://plant-disease-440e7-default-rtdb.firebaseio.com',
-    storageBucket: 'plant-disease-440e7.appspot.com',
+    apiKey: 'AIzaSyBhTsJjob5iTZDSbdznmiO9XaD7NQnTcLQ',
+    appId: '1:125056695111:ios:dfb586a87187870fbd6a62',
+    messagingSenderId: '125056695111',
+    projectId: 'sem6-mini-project',
+    storageBucket: 'sem6-mini-project.appspot.com',
     iosBundleId: 'com.example.chatbot',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyATmf2S-qKjSYbpp90bRsGaGiIF5nbeZoo',
-    appId: '1:294125496359:ios:1b79ebce461f904dbb4602',
-    messagingSenderId: '294125496359',
-    projectId: 'plant-disease-440e7',
-    databaseURL: 'https://plant-disease-440e7-default-rtdb.firebaseio.com',
-    storageBucket: 'plant-disease-440e7.appspot.com',
-    iosBundleId: 'com.example.chatbot.RunnerTests',
+    apiKey: 'AIzaSyBhTsJjob5iTZDSbdznmiO9XaD7NQnTcLQ',
+    appId: '1:125056695111:ios:dfb586a87187870fbd6a62',
+    messagingSenderId: '125056695111',
+    projectId: 'sem6-mini-project',
+    storageBucket: 'sem6-mini-project.appspot.com',
+    iosBundleId: 'com.example.chatbot',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyCU2mtTGX-YDHMaEl0XwNgcWeLm1q3CZU4',
+    appId: '1:125056695111:web:03e4e002d1ec847fbd6a62',
+    messagingSenderId: '125056695111',
+    projectId: 'sem6-mini-project',
+    authDomain: 'sem6-mini-project.firebaseapp.com',
+    storageBucket: 'sem6-mini-project.appspot.com',
+    measurementId: 'G-CZ5X700K45',
+  );
+
 }

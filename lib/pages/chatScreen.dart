@@ -104,7 +104,6 @@ class _ChatScreenState extends State<ChatScreen> {
       _messages.add(Message(isUser: true, message: message, date: DateTime.now()));
     });
 
-
     final content = [Content.text(message)];
     final response = await model.generateContent(content);
 

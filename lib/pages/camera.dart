@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,7 @@ class _CamState extends State<Cam> {
       return 'None';
     }
 
-    String url = 'https://b709-34-73-189-37.ngrok-free.app/prediction';
+    String url = 'https://7bac-34-106-211-89.ngrok-free.app/prediction';
 
     var request = http.MultipartRequest('POST', Uri.parse(url));
 
@@ -53,8 +54,10 @@ class _CamState extends State<Cam> {
       final response = await http.Response.fromStream(streamedResponse);
 
       if (response.statusCode == 200) {
-        print('Response body: ${response.body}');
-        return response.body;
+        dynamic parsedBody = jsonDecode(response.body);
+        String predictedClass = parsedBody["predicted_class"];
+        return predictedClass;
+
       }
       else {
         print('Request failed with status code: ${response.statusCode}');

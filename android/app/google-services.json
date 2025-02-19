@@ -1,14 +1,13 @@
 {
   "project_info": {
-    "project_number": "294125496359",
-    "firebase_url": "https://plant-disease-440e7-default-rtdb.firebaseio.com",
-    "project_id": "plant-disease-440e7",
-    "storage_bucket": "plant-disease-440e7.appspot.com"
+    "project_number": "125056695111",
+    "project_id": "sem6-mini-project",
+    "storage_bucket": "sem6-mini-project.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:294125496359:android:c0ffb5539967b544bb4602",
+        "mobilesdk_app_id": "1:125056695111:android:cbf53e0b42b9f3d6bd6a62",
         "android_client_info": {
           "package_name": "com.example.chatbot"
         }
@@ -16,26 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCKXf8y0s4qVHFR3ldJLaOhtzCMF545SsQ"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:294125496359:android:7d1939ca214a277ebb4602",
-        "android_client_info": {
-          "package_name": "com.example.plant_disease"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCKXf8y0s4qVHFR3ldJLaOhtzCMF545SsQ"
+          "current_key": "AIzaSyDkJDJ60TUjNuCG_IvNmnnfShkVPYxjsU0"
         }
       ],
       "services": {
